@@ -73,3 +73,9 @@ input[type=radio]:checked {
 
 sinput:focus {outline:0;}
 
+.cancelImage{
+
+
+
+	visibility:hidden;
+}
