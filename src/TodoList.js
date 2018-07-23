@@ -1,7 +1,7 @@
 import React from 'react'
 import Todo from './Todo'
 import {Mode} from './Mode'
-const Todolist =({todosArray,taskPress,mode,onMouseEnter,onCancelPressed}) => {
+const Todolist =({todosArray,taskPress,mode,onMouseEnter,onCancelPressed,changeTask}) => {
 
       let todos= [];
 
@@ -13,7 +13,7 @@ const Todolist =({todosArray,taskPress,mode,onMouseEnter,onCancelPressed}) => {
 
 
        
-return <Todo key ={i} task={todosArray[i].task } taskPress ={taskPress} id = {todosArray[i].id} isCompleted={todosArray[i].completed} onMouseEnter={onMouseEnter} onCancelPressed={onCancelPressed}/>
+return <Todo key ={i} task={todosArray[i].task } taskPress ={taskPress} id = {todosArray[i].id} isCompleted={todosArray[i].completed} onMouseEnter={onMouseEnter} onCancelPressed={onCancelPressed} changeTask ={changeTask}/>
 
 
 

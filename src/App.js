@@ -131,6 +131,23 @@ return !todo.completed
 
   this.setState({todosArray:newArray})
   }
+
+  changeTask =(newTask,id) => {
+    
+    const newArray = this.state.todosArray.map(todo =>{
+
+
+    if (todo.id ==id){
+
+      todo.task = newTask
+    }
+
+    return todo;
+
+    })
+  this.setState({todosArray:newArray})
+
+  }
 render() {
 
 
@@ -153,7 +170,7 @@ render() {
 <div className='responsive'>
   <InputField onEnterPress ={this.onEnterPress}/>
  
-  <TodoList  todosArray={this.state.todosArray} taskPress = {this.onTaskPress} mode ={this.state.mode} onMouseEnter={this.onMouseEnter} onCancelPressed={this.onCancelPressed}/>
+  <TodoList changeTask = {this.changeTask} todosArray={this.state.todosArray} taskPress = {this.onTaskPress} mode ={this.state.mode} onMouseEnter={this.onMouseEnter} onCancelPressed={this.onCancelPressed}/>
 
 <ModeChange allPress= {this.onAllPress} completedPress = {this.onCompletedPress} completedCount ={this.completedCount} mode={this.state.mode} onClearCompleted = {this.onClearCompleted}/>
   
