@@ -1,0 +1,75 @@
+
+  
+ 
+ .mainDiv{
+ 	display: flex;
+ 	justify-content: space-between;
+ 	border: 1px solid black;
+ 	/*width:400px;*/
+ 	padding:10px;
+ 	background-color: #FFFAEE;
+ 	box-shadow: 5px 10px 20px   ;
+
+ }
+	/*.todoDiv{
+   display: flex;
+   justify-content: flex-start;
+	}
+
+	.cancelDiv{
+
+				display: flex;
+				justify-content: flex-end;
+				}*/
+.todoDiv{
+	display:flex;
+
+}
+					
+.checkbox{
+
+    
+	
+	
+	margin-right:20px;
+
+	-webkit-appearance:none;
+	appearance: none;
+	
+
+
+}
+.checkbox:after {
+
+
+	content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="38" viewBox="-10 -18 100 135"><circle cx="50" cy="70" r="46" fill="none" stroke="black" stroke-width="3"/></svg>');
+}
+
+.checkbox:checked:after {
+
+content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+
+
+label ,img ,.checkbox{
+ font-size:20px;
+
+}
+label{font-weight: 100;
+  margin-top:17px;
+ 
+}
+img{
+	font-size: 2em;
+
+}
+
+input[type=radio]:checked {
+
+	text-decoration: line-through;
+
+}
+
+
+sinput:focus {outline:0;}
+

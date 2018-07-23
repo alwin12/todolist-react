@@ -1,0 +1,26 @@
+.modeChange{
+     display: flex;
+justify-content: space-between;
+	border:1px solid white;
+	background-color: white;
+	height:60px;
+
+}
+
+.modeButton {
+
+	border:none;
+	background: none;
+	font-size: 12px;
+
+}
+
+ .buttons {
+	margin:20px;
+}
+
+button:focus {outline:0;
+   }
+
+  button:hover {text-decoration: underline;
+}
