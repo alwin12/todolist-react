@@ -40,11 +40,9 @@ return <Todo key ={i} task={todosArray[i].task } taskPress ={taskPress} id={todo
 
 
 
-if (todos.length===0){
 
-	return <h1>no tasks</h1>
-}
-else{
+
+
 return (
 
     <ul>
@@ -58,6 +56,6 @@ return (
 
 }
 
-}
+
 
 export default Todolist;

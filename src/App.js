@@ -120,6 +120,17 @@ const id= event.target.id
 
     return completedArray.length;
   }
+  onClearCompleted = () => {
+   console.log('clear pressed')
+ const newArray = this.state.todosArray.filter(todo =>{
+
+
+return !todo.completed
+
+ })
+
+  this.setState({todosArray:newArray})
+  }
 render() {
 
 
@@ -144,7 +155,7 @@ render() {
  
   <TodoList  todosArray={this.state.todosArray} taskPress = {this.onTaskPress} mode ={this.state.mode} onMouseEnter={this.onMouseEnter} onCancelPressed={this.onCancelPressed}/>
 
-<ModeChange allPress= {this.onAllPress} completedPress = {this.onCompletedPress} completedCount ={this.completedCount} mode={this.state.mode} />
+<ModeChange allPress= {this.onAllPress} completedPress = {this.onCompletedPress} completedCount ={this.completedCount} mode={this.state.mode} onClearCompleted = {this.onClearCompleted}/>
   
 </div>
   </div>

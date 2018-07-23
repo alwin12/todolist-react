@@ -37,7 +37,7 @@ let allButtonStyle = {
 <button style ={completedButtonStyle} class ='modeButton completed' onClick ={props.completedPress}>completed</button>
 </div>
 
-<div className='clearCompleted buttons'><button className='modeButton'>clear Completed</button></div>
+<div className='clearCompleted buttons'><button className='modeButton' onClick = {props.onClearCompleted}>clear Completed</button></div>
 </div>
 
    	)
