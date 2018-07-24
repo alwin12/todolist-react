@@ -150,8 +150,20 @@ return !todo.completed
   this.setState({todosArray:newArray})
 
   }
-render() {
+  componentDidMount(){
+    let savedState = JSON.parse(localStorage.getItem("state"))
 
+    
+    this.setState(savedState)
+  }
+  componentDidUpdate(){
+
+    localStorage.setItem("state",JSON.stringify(this.state))
+
+ 
+  }
+render() {
+  
 
   return ( 
     <div >
