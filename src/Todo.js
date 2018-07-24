@@ -3,6 +3,8 @@ import './Todo.css'
 import cancelImage from './cancel.png'
 
   
+  let lineThroughStyle = {textDecoration:'none'};
+
 class Todo extends React.Component {
      
      constructor(){
@@ -11,9 +13,13 @@ class Todo extends React.Component {
    	
    	showCancel: false,
    	editMode: false,
-   	value: ''
+   	value: '',
+    lineThroughStyle:lineThroughStyle
    }
      }
+
+    
+     
      onMouseEnter = () => {
   console.log('mouse entered')
    this.setState({showCancel:true})
@@ -42,25 +48,30 @@ handleChange = (event) => {
    event.target.style.textDecoration = "none";
 	this.setState({value:event.target.value})
 }
+
+onCheckboxClick = (event) =>{
+
+  this.props.taskPress(event)
+
+
+
+  
+  
+
+
+}
+
+
+
 	render() {
 
+
+
+ 
 const {onMouseEnter,taskPress,id,onCancelPressed,isCompleted,task} = this.props
-
-{/*if (this.state.editMode){
-
-
-	return (
-		<li>
-		<div className="mainDiv">
-    <div className = 'todoDiv'>
-<input onKeyPress = {this.onEnterPress} onChange={this.handleChange} type ='text' value ={ this.state.value} id = {id}/>
-{this.state.showCancel && <img  id={id} onClick={onCancelPressed}  src={cancelImage} width='15px' height='15px'/>}
-		 </div>
-		</div>
-      </li>
-		)
-}
-*/}
+   
+    let lineThroughStyle = {textDecoration:'none'}
+ isCompleted? lineThroughStyle = {textDecoration:"line-through"} : lineThroughStyle={textDecoration:'none'}
 
 if(!isCompleted){
 
@@ -68,14 +79,14 @@ return(
 	
 <li>
 <div className='mainDiv'  onMouseEnter = {this.onMouseEnter}  onDoubleClick = {this.onDoubleClick} onMouseLeave = {this.onMouseLeave} id ={id} >
-<div className='todoDiv'>
- <input onClick ={taskPress} className='checkbox' type ='checkbox'  id = {id}/>
+<div style ={lineThroughStyle} className='todoDiv'>
+ <input onClick ={this.onCheckboxClick} className='checkbox' type ='checkbox'  id = {id}/>
  {this.state.editMode ?
 
-  	<input onKeyPress = {this.onEnterPress} onChange={this.handleChange} type ='text' value ={ this.state.value} id = {id}/>
+  	<input  onKeyPress = {this.onEnterPress} onChange={this.handleChange} type ='text' value ={ this.state.value} id = {id}/>
   :
   	
-  		<label>{task}</label>
+  		<label style = {lineThroughStyle}>{task}</label>
 
 }
  
@@ -99,14 +110,13 @@ return (
 
 <li >
 <div onDoubleClick={this.onDoubleClick} className='mainDiv' onMouseEnter={onMouseEnter} onMouseEnter = {this.onMouseEnter} onMouseLeave = {this.onMouseLeave} id={id} >
-<div className='todoDiv'>
- <input onClick ={taskPress} className='checkbox'  type ='checkbox' id = {id}/>
+<div  className = 'todoDiv'>
+ <input onClick ={this.onCheckboxClick} className='checkbox'  type ='checkbox' id = {id}/>
 {this.state.editMode ?
 
     <input onKeyPress = {this.onEnterPress} onChange={this.handleChange} type ='text' value ={ this.state.value} id = {id}/>
   :
-    
-      <label>{task}</label>
+    <label style= {lineThroughStyle} >{task}</label> 
 
 }
  </div>

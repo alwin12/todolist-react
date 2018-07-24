@@ -23,6 +23,7 @@ class App extends Component {
     isCancelHidden: true,
   }
 }
+
 onEnterPress =(event) => {
 
   if (event.key==='Enter'){
@@ -45,7 +46,7 @@ onEnterPress =(event) => {
 
 
  onTaskPress=(event) => {
-
+  
   const id = event.target.id;
    const div = document.getElementById(id);
 
@@ -54,16 +55,17 @@ onEnterPress =(event) => {
    if(todo.id ==id){
     todo.completed =!todo.completed
       
-    return todo 
+    
    }
-  else {return todo}
+  
+    return todo
 
 
     })
     this.setState({todosArray:newArray});
 
    
-   div.classList.toggle('line-through')
+   //div.classList.toggle('line-through')
 
   }
 
