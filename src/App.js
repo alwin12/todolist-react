@@ -23,6 +23,7 @@ class App extends Component {
     isCancelHidden: true,
   }
 }
+
 onEnterPress =(event) => {
 
   if (event.key==='Enter'){
@@ -45,7 +46,7 @@ onEnterPress =(event) => {
 
 
  onTaskPress=(event) => {
-
+  
   const id = event.target.id;
    const div = document.getElementById(id);
 
@@ -54,16 +55,17 @@ onEnterPress =(event) => {
    if(todo.id ==id){
     todo.completed =!todo.completed
       
-    return todo 
+    
    }
-  else {return todo}
+  
+    return todo
 
 
     })
     this.setState({todosArray:newArray});
 
    
-   div.classList.toggle('line-through')
+   //div.classList.toggle('line-through')
 
   }
 
@@ -131,6 +133,23 @@ return !todo.completed
 
   this.setState({todosArray:newArray})
   }
+
+  changeTask =(newTask,id) => {
+    
+    const newArray = this.state.todosArray.map(todo =>{
+
+
+    if (todo.id ==id){
+
+      todo.task = newTask
+    }
+
+    return todo;
+
+    })
+  this.setState({todosArray:newArray})
+
+  }
 render() {
 
 
@@ -153,7 +172,7 @@ render() {
 <div className='responsive'>
   <InputField onEnterPress ={this.onEnterPress}/>
  
-  <TodoList  todosArray={this.state.todosArray} taskPress = {this.onTaskPress} mode ={this.state.mode} onMouseEnter={this.onMouseEnter} onCancelPressed={this.onCancelPressed}/>
+  <TodoList changeTask = {this.changeTask} todosArray={this.state.todosArray} taskPress = {this.onTaskPress} mode ={this.state.mode} onMouseEnter={this.onMouseEnter} onCancelPressed={this.onCancelPressed}/>
 
 <ModeChange allPress= {this.onAllPress} completedPress = {this.onCompletedPress} completedCount ={this.completedCount} mode={this.state.mode} onClearCompleted = {this.onClearCompleted}/>
   

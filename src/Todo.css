@@ -64,14 +64,14 @@ img{
 
 }
 
-input[type=radio]:checked {
+/*input[type=radio]:checked {
 
 	text-decoration: line-through;
 
-}
+}*/
 
 
-sinput:focus {outline:0;}
+input:focus {outline:0;}
 
 .cancelImage{
 
