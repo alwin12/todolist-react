@@ -1,6 +1,6 @@
 import React from 'react'
-import Todo from './Todo'
-import {Mode} from './Mode'
+import Todo from '../Todo/Todo'
+import {Mode} from '../Mode'
 const Todolist =({todosArray,taskPress,mode,onMouseEnter,onCancelPressed,changeTask}) => {
 
       let todos= [];
@@ -8,7 +8,7 @@ const Todolist =({todosArray,taskPress,mode,onMouseEnter,onCancelPressed,changeT
     
       if (mode.localeCompare(Mode.all)===0)
       {
-      	console.log('all')
+      	
 	 todos = todosArray.map((todo,i)=>{
 
 

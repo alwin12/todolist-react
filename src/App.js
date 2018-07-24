@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import InputField from './InputField'
-import TodoList from './TodoList'
+import InputField from './Components/InputField/InputField'
+import TodoList from './Components/TodoList/TodoList'
 import './App.css';
 import {todos} from './todos'
-import Scroll from './Scroll'
 import {Mode} from './Mode'
-import ModeChange from './ModeChange'
+import ModeChange from './Components/ModeChange/ModeChange'
 import Particles from 'react-particles-js';
-import './a.json'
 import {ParticleConfig} from './ParticleConfig'
 
 class App extends Component {
