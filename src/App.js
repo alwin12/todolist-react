@@ -152,11 +152,11 @@ return !todo.completed
     let savedState = JSON.parse(localStorage.getItem("state"))
 
     
-    this.setState(savedState)
+  this.setState(savedState)
   }
   componentDidUpdate(){
 
-    localStorage.setItem("state",JSON.stringify(this.state))
+   localStorage.setItem("state",JSON.stringify(this.state))
 
  
   }
