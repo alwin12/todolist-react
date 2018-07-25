@@ -1,6 +1,6 @@
 import React from 'react'
 import './ModeChange.css'
-import {Mode} from './Mode.js'
+import {Mode} from '../Mode.js'
 
 const ModeChange = (props) => {
 

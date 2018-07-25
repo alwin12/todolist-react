@@ -80,7 +80,7 @@ return(
 <li>
 <div className='mainDiv'  onMouseEnter = {this.onMouseEnter}  onDoubleClick = {this.onDoubleClick} onMouseLeave = {this.onMouseLeave} id ={id} >
 <div style ={lineThroughStyle} className='todoDiv'>
- <input onClick ={this.onCheckboxClick} className='checkbox' type ='checkbox'  id = {id}/>
+ <input onClick ={this.onCheckboxClick} className='checkbox' checked = {isCompleted} type ='checkbox'  id = {id}/>
  {this.state.editMode ?
 
   	<input  onKeyPress = {this.onEnterPress} onChange={this.handleChange} type ='text' value ={ this.state.value} id = {id}/>
@@ -111,7 +111,7 @@ return (
 <li >
 <div onDoubleClick={this.onDoubleClick} className='mainDiv' onMouseEnter={onMouseEnter} onMouseEnter = {this.onMouseEnter} onMouseLeave = {this.onMouseLeave} id={id} >
 <div  className = 'todoDiv'>
- <input onClick ={this.onCheckboxClick} className='checkbox'  type ='checkbox' id = {id}/>
+ <input onClick ={this.onCheckboxClick} className='checkbox' checked = {isCompleted} type ='checkbox' id = {id}/>
 {this.state.editMode ?
 
     <input onKeyPress = {this.onEnterPress} onChange={this.handleChange} type ='text' value ={ this.state.value} id = {id}/>
